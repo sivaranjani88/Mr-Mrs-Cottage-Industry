@@ -1,0 +1,1375 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Copse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color: black;
+    --heading-color: rgba(117, 27, 27, 0.897);
+    --heading-font-style: "Lexend Deca", sans-serif;
+    --title-font-style:"Bebas Neue", sans-serif;
+    --gradient-color:linear-gradient(#e3bc51,#c29b32);
+
+}
+
+/*page6-wholepage design very Important*/
+.page6{
+    width: 100%;
+    height: 100vh;
+    /* background-color: pink; */
+    /* background: linear-gradient(#e3bc51,#c29b32); */
+
+    position: relative;
+    overflow-y: scroll;
+}
+
+/*top box content*/
+.top{
+    position: fixed;
+    width: 100vw;
+    background: linear-gradient(#e3bc51,#c29b32);
+    /*background-color: rgb(236, 4, 4);*/ 
+    /*background: linear-gradient(#ffb347,#ffcc33);*/
+    top: 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+/*#icon{
+    padding-left: 500px;
+}*/
+.top>h1{
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 25px;
+    padding-left: 540px;
+    color: var(--text-color);
+}
+.flicker{
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px  #fff,
+                 0 0 40px #fff;
+    animation: neon-flicker 1.5s infinite;
+
+}
+@keyframes neon-flicker{
+    0%,100%{
+        opacity: 1;
+    }
+    10%,30%,50%,70%{
+        opacity: 0.5;
+    }
+    20%,60%{
+        opacity: 0.1;
+    }
+}
+
+/*nav bar designs*/
+.nav{
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    background-color: white;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+     
+}
+.nav>h4{
+    padding: 0px 50px;
+    font-size: 17px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+
+}
+.nav>h4:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+    color: brown;
+
+}
+.nav_icons{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: 30px;
+}
+.nav_icons i:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+.nav h4 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*logo design*/
+#logo{
+    transition: 1s;
+        
+}
+#logo:hover{
+    transform: scale(1.5) rotateY(360deg);   
+    
+}
+.nav_icons a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* intro top section starts here*/
+.introtop{
+    height: 190px;
+    width: 100%;
+    /* background-color: pink; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 122px;
+    position: relative;
+    border-top: 1px solid #e3bc51;
+    border-bottom: 1px solid #e3bc51
+    
+}
+.introtop img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+/*slideshow content starts here*/
+.css-slideshow {
+  position: relative;
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+  height: 400px; /* Adjust based on your image heights */
+  border-radius: 20px;
+  background-color: white;
+  
+  
+}
+
+/* Hide the radio buttons from the user view */
+.css-slideshow input[type="radio"] {
+  display: none;
+}
+
+/* Hide all slides by default and position them absolutely within */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CSS Magic: Show the slide that matches the checked radio button */
+#slide-1:checked ~ .slide-1,
+#slide-2:checked ~ .slide-2,
+#slide-3:checked ~ .slide-3,
+#slide-4:checked ~ .slide-4,
+#slide-5:checked ~ .slide-5{
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Format the Left and Right clickable labels */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(11, 11, 87, 0.864);
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(241, 169, 54, 0.923);
+}
+/* DOT CONTAINER */
+/* .dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 50;
+} */
+
+/* DOT STYLE */
+/* .dots label {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: rgba(251, 3, 3, 0.903);
+  border: 1px solid white;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: 0.3s;
+} */
+
+/* ACTIVE DOT (Slide 1) */
+/* #slide-1:checked ~ .dots label[for="slide-1"],
+#slide-2:checked ~ .dots label[for="slide-2"],
+#slide-3:checked ~ .dots label[for="slide-3"] {
+  background: white;
+  transform: scale(1.2);
+} */
+
+/* Customers  review slide portion*/
+.reviewslide{
+    width: 100%;
+    height: 430px;
+    /* background-color: green; */
+    background-color: white;
+    margin-top: 2px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.reviewslide h1{
+    padding: 20px 0px;
+    text-align: center;
+    font-family: "Alice", serif;   
+}
+.container{
+    width: 100%;
+    height: 570px;
+    background-color:white;
+    /* background-color: white; */
+    overflow-y: hidden;
+    /* overflow-x: hidden; */
+    /* overflow: hidden; */
+    position: relative;
+    /* scrollbar-width: none; */
+    z-index: 1;
+}
+.container .box{
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear 0s infinite;
+    gap: 20px;
+    margin-top: 20px;
+    
+   
+
+}
+.box:hover{
+    animation-play-state: paused;
+}
+.box img{
+    width: 310px;
+    height: 300px;
+    /* padding: 0px 10px; */
+    transition: 0.4s;
+    border-radius: 10px;
+    border: 2px solid black;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.box img:hover{
+    transform: scale(1.08);
+}
+@keyframes scroll{
+    from{
+        transform: translateX(-50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+/* part portion starts here*/
+.part{
+    width: 100%;
+    height: 500px;
+    /* background-color: white; */
+    background-color: white;
+    /* margin-top: 100px; */
+    display: flex;
+    margin-top: 0px;
+
+}
+.left{
+    height: 400px;
+    width: 710px;
+    margin-top: 50px;
+    margin-left: 30px;
+    background-color: green;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.left img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.right{
+    height: 400px;
+    width: 710px;
+    margin-top: 50px;
+    margin-left: 30px;
+    background-color: orangered;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.right img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.left:hover,.right:hover{
+   transform: scale(1.03);
+}
+
+/* bottom portion starts here*/
+.bottom{
+    width: 100%;
+    height: 220px;
+    /* background-color: aqua; */
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.bottom img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*footer design starts here*/
+.footer{
+    width: 100%;
+    height: 380px;
+    margin-top: 0px;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /*background: linear-gradient(rgb(239, 233, 233),#DDEFBB);*/
+   background-color: black;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+
+}
+/*footer logo & brand name*/
+.linkinfo{
+    width: 250px;
+    height: 150px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 100px;
+}
+.linkinfo img{
+    height: 150px;
+    width: 150px;
+    margin-left: 22px;
+    
+}
+.linkinfo h5{
+    color: white;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    padding-left: 20px;
+}
+.linkinfo h6{
+    color: #e3bc51;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    padding-left: 40px;
+}
+/*products list container*/
+.plist{
+    width: 170px;
+    height: 250px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    
+}
+.plist h6{
+    color: #e3bc51;
+    margin: 20px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+.plist p{
+    padding: 10px 20px;
+    font-family: var(--heading-font-style);
+    color: white;
+}
+.plist a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Quicklinks container*/
+.quicklinks{
+    width: 210px;
+    height: 290px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    /*border: 1px solid white;*/
+}
+.quicklinks h6{
+    color: #e3bc51;
+    margin: 18px 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+.quicklinks p{
+    padding: 10px 10px;
+    font-family: var(--heading-font-style);
+    color: white;
+    font-size: 16px;
+
+}
+.quicklinks a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* contact us container*/
+.contactus{
+    width: 310px;
+    height: 290px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    /*border: 1px solid white;*/
+}
+.contactus h6{
+    color: #e3bc51;
+    margin: 20px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+
+}
+.contactus i{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.contactus span{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+#c2{
+    padding-top: 20px;
+}
+.contactus p{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+/*follow us content alignment*/
+#h6{
+    color: #e3bc51;
+    margin-top: 28px;
+    margin-left:20px;
+    margin-right:20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+/* Insta icon hover & href link design*/
+#c3{
+    padding-left: 22px;
+    transition: transform 0.3s linear;
+}
+ #c3:hover,
+ #c3:focus{
+    cursor: pointer;
+    transform: scale(1.2);  
+ }
+#c4{
+    padding-left: 28px;
+}
+#c5{
+    padding-left: 28px;
+}
+/*Youtube icon hover & href link design*/
+#c6{
+    padding-left: 28px;
+    transition: transform 0.3s linear;
+}
+ #c6:hover,
+ #c6:focus{
+    cursor: pointer;
+    transform: scale(1.2);  
+}
+
+ /* whatsapp qr design*/
+.qr{
+    width: 150px;
+    height: 190px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin-left: -10px;
+    margin-top: 100px;
+    /*border: 1px solid white;*/
+ }
+ .qr img{
+   width: 150px;
+   height: 190px;
+   object-fit: cover;
+ }
+
+ /*below footer license container*/
+  
+.license{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    border-top: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.license p{
+    /* padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 600px; */
+     padding: 5px 0;
+    text-align: center;
+}
+
+
+/* Media query starts here*/
+
+/*top and nav bar mq starts here*/
+
+/*  
+   XS DEVICES (0px - 575.98px)
+  */
+@media (max-width: 575.98px){
+
+    .top{
+        height: 40px;
+        justify-content: center;
+    }
+
+    .top>h1{
+        padding-left: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .nav{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        top: 40px;
+        position: fixed;
+        background-color: pink;
+    }
+
+    #logo{
+        width: 55px;
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .nav>h4{
+        padding: 8px 3px;
+        font-size: 10px;
+    }
+
+    .nav_icons{
+        margin-left: -4px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        position: relative;
+        gap: 5px;
+    }
+
+    
+
+}
+
+/*  
+   SM DEVICES (576px - 767.98px)
+  */
+@media (min-width:576px) and (max-width:767.98px){
+
+    .top{
+        justify-content:center;
+    }
+
+    .top>h1{
+        padding-left:0;
+        font-size:18px;
+        text-align:center;
+    }
+
+    .nav{
+        /* height:auto;
+        flex-direction:column;
+        top:50px;
+        padding:10px 0; */
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        top: 40px;
+        position: fixed;
+        background-color: slateblue;
+    }
+
+    #logo{
+        width:60px;
+        height:60px;
+    }
+
+    .nav>h4{
+        padding:8px 10px;
+        font-size:10px;
+    }
+
+    .nav_icons{
+        margin-left:0;
+        margin-top:2px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    
+
+}
+
+/*  
+   MD DEVICES (768px - 991.98px)
+  */
+@media (min-width:768px) and (max-width:991.98px){
+
+    .top{
+        justify-content:center;
+    }
+
+    .top>h1{
+        padding-left:0;
+        font-size:20px;
+    }
+
+    .nav{
+        flex-wrap:wrap;
+        height:auto;
+        padding:10px;
+    }
+
+    #logo{
+        width:100px;
+        height:100px;
+    }
+
+    .nav>h4{
+        padding:10px 20px;
+        font-size:15px;
+    }
+
+    .video-section{
+        margin-top:180px;
+    }
+
+}
+
+/*  
+   LG DEVICES (992px - 1199.98px)
+  */
+@media (min-width:992px) and (max-width:1199.98px){
+
+    .top>h1{
+        padding-left:0;
+        width:100%;
+        text-align:center;
+        font-size:22px;
+    }
+
+    .nav>h4{
+        padding:0 20px;
+        font-size:15px;
+    }
+
+    #logo{
+        width:100px;
+        height:100px;
+    }
+
+    .nav_icons{
+        margin-left:15px;
+    }
+
+}
+
+/*  
+   XL DEVICES (1200px - 1399.98px)
+  */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+    .top>h1{
+        padding-left:0;
+        width:100%;
+        text-align:center;
+    }
+
+    .nav>h4{
+        padding:0 30px;
+    }
+
+}
+
+/*  
+   XXL DEVICES (1400px and above pxs)
+     */
+@media (min-width:1400px){
+
+    /* No changes needed
+    */
+
+}
+
+/* Intro top mq starts here*/
+
+/* XS devices (below 576px) */
+@media (max-width:575.98px){
+    .introtop{
+        height:80px;
+        margin-top:120px;
+    }
+}
+
+/* SM devices (576px - 767.98px) */
+
+@media (min-width:576px) and (max-width:669px){
+    .introtop{
+        height:100px;
+        overflow:hidden;
+        margin-top: 105px;
+    }
+
+    .introtop img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        display:block;
+    }
+}
+
+@media (min-width:670px) and (max-width:689px){
+    .introtop{
+        height:100px;
+        overflow:hidden;
+    }
+
+    .introtop img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        display:block;
+    }
+}
+
+@media (min-width:690px) and (max-width:767.98px){
+    .introtop{
+        height:100px;
+        margin-top:105px;
+       
+    
+    }
+}
+
+/* MD devices (768px - 991.98px) */
+@media (min-width:768px) and (max-width:991.98px){
+    .introtop{
+        height:120px;
+        margin-top:230px;
+    }
+}
+
+/* LG devices (992px - 1199.98px) */
+@media (min-width:992px) and (max-width:1199.98px){
+    .introtop{
+        height:150px;
+        margin-top:125px;
+    }
+}
+
+/* XL devices (1200px - 1399.98px) */
+@media (min-width:1200px) and (max-width:1399.98px){
+    .introtop{
+        height:170px;
+        margin-top:122px;
+    }
+}
+
+/* XXL devices (1400px and above) */
+@media (min-width:1400px){
+    .introtop{
+        height:190px;
+        margin-top:122px;
+    }
+}
+
+/* css-slideshow mq starts here*/
+
+/* XS devices (below 576px) */
+@media (max-width:575.98px){
+    .css-slideshow{
+        max-width:100%;
+        height:180px;
+        margin-top:10px;
+        border-radius:10px;
+    }
+
+    .slide img{
+        object-fit:cover;
+    }
+
+    .prev,.next{
+        padding:10px;
+        font-size:18px;
+    }
+}
+
+/* SM devices (576px - 767.98px) */
+@media (min-width:576px) and (max-width:767.98px){
+    .css-slideshow{
+        max-width:100%;
+        height:240px;
+        margin-top:15px;
+        border-radius:15px;
+    }
+
+    .prev,.next{
+        padding:12px;
+        font-size:20px;
+    }
+}
+
+/* MD devices (768px - 991.98px) */
+@media (min-width:768px) and (max-width:991.98px){
+    .css-slideshow{
+        max-width:100%;
+        height:300px;
+    }
+
+    .prev,.next{
+        font-size:22px;
+    }
+}
+
+/* LG devices (992px - 1199.98px) */
+@media (min-width:992px) and (max-width:1199.98px){
+    .css-slideshow{
+        max-width:950px;
+        height:350px;
+    }
+}
+
+/* XL devices (1200px - 1399.98px) */
+@media (min-width:1200px) and (max-width:1399.98px){
+    .css-slideshow{
+        max-width:1150px;
+        height:380px;
+    }
+}
+
+/* XXL devices (1400px and above) */
+@media (min-width:1400px){
+    .css-slideshow{
+        max-width:1300px;
+        height:400px;
+    }
+}
+
+/* review slide mq starts here*/
+
+/* XS devices (below 576px) */
+@media (max-width:575.98px){
+    .reviewslide{
+        height:260px;
+    }
+
+    .reviewslide h1{
+        font-size:20px;
+        padding:15px 10px;
+    }
+
+    .container{
+        height:180px;
+    }
+
+    .container .box{
+        gap:10px;
+        margin-top:10px;
+    }
+
+    .box img{
+        width:150px;
+        height:140px;
+        border-radius:8px;
+    }
+}
+
+
+/* SM devices (576px - 767.98px) */
+@media (min-width:576px) and (max-width:767.98px){
+    .reviewslide{
+        height:320px;
+    }
+
+    .reviewslide h1{
+        font-size:24px;
+        padding:15px 10px;
+    }
+
+    .container{
+        height:240px;
+    }
+
+    .container .box{
+        gap:15px;
+        margin-top:15px;
+    }
+
+    .box img{
+        width:200px;
+        height:190px;
+    }
+}
+
+
+/* MD devices (768px - 991.98px) */
+@media (min-width:768px) and (max-width:991.98px){
+    .reviewslide{
+        height:360px;
+    }
+
+    .reviewslide h1{
+        font-size:30px;
+    }
+
+    .container{
+        height:280px;
+    }
+
+    .box img{
+        width:250px;
+        height:240px;
+    }
+}
+
+
+/* LG devices (992px - 1199.98px) */
+@media (min-width:992px) and (max-width:1199.98px){
+    .reviewslide{
+        height:390px;
+    }
+
+    .box img{
+        width:280px;
+        height:270px;
+    }
+}
+
+
+/* XL devices (1200px - 1399.98px) */
+@media (min-width:1200px) and (max-width:1399.98px){
+    .reviewslide{
+        height:410px;
+    }
+
+    .box img{
+        width:300px;
+        height:290px;
+    }
+}
+
+
+/* XXL devices (1400px and above) */
+@media (min-width:1400px){
+    .reviewslide{
+        height:430px;
+    }
+
+    .box img{
+        width:310px;
+        height:300px;
+    }
+}
+
+/* part mq starts here*/
+
+/* XS */
+@media (max-width:575.98px){
+    .part{
+        flex-direction:column;
+        height:auto;
+        gap:20px;
+        padding:20px 0;
+    }
+    .left,.right{
+        width:95%;
+        height:auto;
+        margin:0 auto;
+    }
+}
+
+/* SM */
+@media (min-width:576px) and (max-width:767.98px){
+    .part{
+        flex-direction:column;
+        height:auto;
+        gap:25px;
+        padding:25px 0;
+    }
+    .left,.right{
+        width:90%;
+        height:auto;
+        margin:0 auto;
+    }
+}
+
+/* MD */
+@media (min-width:768px) and (max-width:991.98px){
+    .part{
+        flex-direction:column;
+        height:auto;
+        gap:30px;
+        padding:30px 0;
+    }
+    .left,.right{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+    }
+}
+
+/* LG */
+@media (min-width:992px) and (max-width:1199.98px){
+    .part{
+        flex-direction:column;
+        height:auto;
+        gap:30px;
+        padding:30px 0;
+    }
+    .left,.right{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+    }
+}
+
+/* XL */
+@media (min-width:1200px) and (max-width:1399.98px){
+     .part{
+        flex-direction:column;
+        height:auto;
+        gap:30px;
+        padding:30px 0;
+    }
+    .left,.right{
+        width:85%;
+        height:auto;
+        margin:0 auto;
+    }
+}
+
+/* XXL devices (1400px and above) */
+
+@media (min-width:1400px){
+    .part{
+        height:500px;
+    }
+
+    .left{
+        width:710px;
+        height:400px;
+        margin-top:50px;
+        margin-left:30px;
+    }
+
+    .right{
+        width:710px;
+        height:400px;
+        margin-top:50px;
+        margin-left:30px;
+    }
+
+    .left:hover,.right:hover{
+        transform:scale(1.2);
+    }
+}
+
+/* bottom mq starts here*/
+
+
+/* XS devices (below 576px) */
+@media (max-width:575.98px){
+    .bottom{
+        height:70px;
+    }
+
+    .bottom img{
+        object-fit:cover;
+    }
+}
+
+
+/* SM devices (576px - 767.98px) */
+@media (min-width:576px) and (max-width:767.98px){
+    .bottom{
+        height:90px;
+    }
+
+    .bottom img{
+        object-fit:contain;
+    }
+}
+
+
+/* MD devices (768px - 991.98px) */
+@media (min-width:768px) and (max-width:991.98px){
+    .bottom{
+        height:120px;
+    }
+
+    .bottom img{
+        object-fit:contain;
+    }
+}
+
+
+/* LG devices (992px - 1199.98px) */
+@media (min-width:992px) and (max-width:1199.98px){
+    .bottom{
+        height:160px;
+    }
+
+    .bottom img{
+        object-fit:cover;
+    }
+}
+
+
+/* XL devices (1200px - 1399.98px) */
+@media (min-width:1200px) and (max-width:1399.98px){
+    .bottom{
+        height:190px;
+    }
+
+    .bottom img{
+        object-fit:cover;
+    }
+}
+
+
+/* XXL devices (1400px and above) */
+@media (min-width:1400px){
+    .bottom{
+        height:220px;
+    }
+
+    .bottom img{
+        object-fit:cover;
+    }
+}
+
+/* footer and license mq starts here */
+
+/*   XS + SM (0px - 767.98px)   */
+@media (max-width:767.98px){
+
+.footer{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.linkinfo{
+    margin-top: 20px;
+}
+
+.linkinfo img{
+    margin-left: 0;
+}
+
+.plist p,
+.quicklinks p{
+    padding: 10px 0;
+}
+
+.contactus i,
+.contactus span,
+.contactus p{
+    padding-left: 0;
+}
+
+#h6{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.qr{
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.license{
+    height: auto;
+}
+
+.license p{
+    text-align: center;
+    padding: 15px;
+}
+
+}
+
+
+/*   MD (768px - 991.98px)   */
+@media (min-width:768px) and (max-width:991.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:0;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   LG (992px - 1199.98px)   */
+@media (min-width:992px) and (max-width:1199.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:20px;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   XL (1200px - 1399.98px)   */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   XXL (1400px and above pxs)   */
+@media (min-width:1400px){
+
+.footer{
+    display:flex;
+    flex-direction:row;
+}
+
+.license p{
+    text-align:center;
+}
+
+}

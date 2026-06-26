@@ -1,0 +1,1317 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Copse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color: black;
+    --heading-color: rgba(117, 27, 27, 0.897);
+    --heading-font-style: "Lexend Deca", sans-serif;
+    --title-font-style:"Bebas Neue", sans-serif;
+    --gradient-color:linear-gradient(#e3bc51,#c29b32);
+    --buynow-style: "Lora", serif;
+
+}
+.page5{
+    width: 100vw;
+    height: 100vh;
+    /*background-color: pink;*/
+    background: linear-gradient(#e3bc51,#c29b32);
+    position: relative;
+    overflow-y: scroll;
+}
+/*top box content*/
+.top{
+    position: fixed;
+    width: 100vw;
+    background: linear-gradient(#e3bc51,#c29b32);
+    /*background-color: rgb(236, 4, 4);*/ 
+    /*background: linear-gradient(#ffb347,#ffcc33);*/
+    top: 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+/*#icon{
+    padding-left: 500px;
+}*/
+.top>h1{
+    font-family: "Smooch Sans", sans-serif;;
+    font-size: 25px;
+    padding-left: 540px;
+    color: var(--text-color);
+}
+.flicker{
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px  #fff,
+                 0 0 40px #fff;
+    animation: neon-flicker 1.5s infinite;
+
+}
+@keyframes neon-flicker{
+    0%,100%{
+        opacity: 1;
+    }
+    10%,30%,50%,70%{
+        opacity: 0.5;
+    }
+    20%,60%{
+        opacity: 0.1;
+    }
+}
+/*nav bar designs*/
+.nav{
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    background-color: white;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+     
+}
+.nav>h4{
+    padding: 0px 50px;
+    font-size: 17px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+
+}
+.nav>h4:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+    color: brown;
+
+}
+.nav_icons{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: 30px;
+}
+.nav_icons i:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+.nav h4 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*logo design*/
+#logo{
+    transition: 1s;
+    
+}
+#logo:hover{
+    transform: scale(1.5) rotateY(360deg);  
+}
+.nav_icons a{
+    text-decoration: none;
+    color: inherit;
+}
+/*Haircare drop-down starts here*/
+.haircare{
+    position: relative;
+    padding: 0 50px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top:20px;
+    left: 0;
+    width: 220px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    z-index: 100;
+}
+.dropdown-menu a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+.dropdown-menu a:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+    color: #c29b32;
+}
+.haircare:hover .dropdown-menu{
+    display: block;
+}
+/*skincare drop-down starts here*/
+.skincare{
+    position: relative;
+    padding: 0 50px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top:20px;
+    left: 0;
+    width: 220px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    z-index: 100;
+}
+.dropdown-menu a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+.dropdown-menu a:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+    color: #c29b32;
+}
+.skincare:hover .dropdown-menu{
+    display: block;
+}
+/*kits container starts here*/
+.kitscontainer{
+    width: 100%;
+    height: 1150px;
+    /* background-color: rgb(91, 91, 214); */
+    background-color: white;
+    /* margin-top: 0px; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    margin-top: 122px;
+}
+.tagline{
+    width: 100%;
+    height: 140px;
+    background-color: white;
+
+}
+.tagline h1{
+    padding: 30px 370px;
+    font-family: var(--heading-font-style);
+    font-size: 40px;
+}
+.tagline p{
+    margin-left: 570px;
+    margin-top: -20px;
+    font-family: "Playwrite GB J", cursive;
+    font-size: 18px;
+    color: brown;
+}
+/* container elements arranged using float-left starts here*/
+.p1{
+    width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: 60px 30px 60px 55px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/ADKIT.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+}
+.p1 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p2{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: 60px 20px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/AGK.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p2 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p3{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: 60px 20px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/AHKIT.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p3 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p4{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: 60px 20px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/ALKIT.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p4 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p5{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: -20px 30px 60px 55px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/COMBO.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p5 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p6{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: -20px 20px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/MCK.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p6 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+.p7{
+   width: 320px;
+    height: 420px;
+    border: 1px solid black;
+    margin: -20px 20px;
+    border-radius: 10px;
+    /* position: relative; */
+    background-image: url(./Pg5-kits-combos/SCK.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    float: left;
+
+}
+.p7 button{
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 380px;
+    margin-left: 110px;
+    background-color: white;
+} 
+button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+button:focus{
+    background-color: #e3bc51;
+}
+/* .pp{
+    animation: hit 5s infinite;
+}
+.p1{animation-delay: 0s;}
+.p2{animation-delay: .2s;}
+.p3{animation-delay: .4s;}
+.p4{animation-delay: .6s;}
+.p5{animation-delay: .8s;}
+.p6{animation-delay: 1s;}
+.p7{animation-delay: 1.2s;}
+@keyframes hit{
+    0%,100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(50px);
+    }
+    40%{
+        transform: translateX(0);
+    }
+} */
+/*footer design starts here*/
+.footer{
+    width: 100%;
+    min-height: 380px;
+    margin-top: 0px;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /*background: linear-gradient(rgb(239, 233, 233),#DDEFBB);*/
+   background-color: black;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+
+}
+/*footer logo & brand name*/
+.linkinfo{
+    width: 250px;
+    height: 150px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 100px;
+}
+.linkinfo img{
+    height: 150px;
+    width: 150px;
+    margin-left: 22px;
+    
+}
+.linkinfo h5{
+    color: white;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    padding-left: 20px;
+}
+.linkinfo h6{
+    color: #e3bc51;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    padding-left: 40px;
+}
+/*products list container*/
+.plist{
+    width: 170px;
+    height: 250px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    
+}
+.plist h6{
+    color: #e3bc51;
+    margin: 20px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+.plist p{
+    padding: 10px 20px;
+    font-family: var(--heading-font-style);
+    color: white;
+}
+.plist a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Quicklinks container*/
+.quicklinks{
+    width: 210px;
+    height: 290px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    /*border: 1px solid white;*/
+}
+.quicklinks h6{
+    color: #e3bc51;
+    margin: 18px 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+.quicklinks p{
+    padding: 10px 10px;
+    font-family: var(--heading-font-style);
+    color: white;
+    font-size: 16px;
+
+}
+.quicklinks a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* contact us container*/
+.contactus{
+    width: 310px;
+    height: 290px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin: 60px;
+    /*border: 1px solid white;*/
+}
+.contactus h6{
+    color: #e3bc51;
+    margin: 20px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+
+}
+.contactus i{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.contactus span{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+#c2{
+    padding-top: 20px;
+}
+.contactus p{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+/*follow us content alignment*/
+#h6{
+    color: #e3bc51;
+    margin-top: 28px;
+    margin-left:20px;
+    margin-right:20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+/* Insta icon hover & href link design*/
+#c3{
+    padding-left: 22px;
+    transition: transform 0.3s linear;
+}
+ #c3:hover,
+ #c3:focus{
+    cursor: pointer;
+    transform: scale(1.2);  
+ }
+#c4{
+    padding-left: 28px;
+}
+#c5{
+    padding-left: 28px;
+}
+/*Youtube icon hover & href link design*/
+#c6{
+    padding-left: 28px;
+    transition: transform 0.3s linear;
+}
+ #c6:hover,
+ #c6:focus{
+    cursor: pointer;
+    transform: scale(1.2);  
+}
+
+ /* whatsapp qr design*/
+.qr{
+    width: 150px;
+    height: 190px;
+    /*background-color: rgb(77, 67, 67);*/
+    margin-left: -10px;
+    margin-top: 100px;
+    /*border: 1px solid white;*/
+ }
+ .qr img{
+   width: 150px;
+   height: 190px;
+   object-fit: cover;
+ }
+
+ /*below footer license container*/
+  
+.license{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    border-top: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.license p{
+    /* padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 600px; */
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Media query starts here*/
+
+/*top and nav bar mq starts here*/
+
+/*  
+   XS DEVICES (0px - 575.98px)
+  */
+@media (max-width: 575.98px){
+
+    .top{
+        height: 40px;
+        justify-content: center;
+    }
+
+    .top>h1{
+        padding-left: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .nav{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        top: 40px;
+        position: fixed;
+        background-color: pink;
+    }
+
+    #logo{
+        width: 55px;
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .nav>h4{
+        padding: 8px 3px;
+        font-size: 10px;
+    }
+
+    .nav_icons{
+        margin-left: -4px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        position: relative;
+        gap: 5px;
+    }
+
+    
+
+}
+
+/*  
+   SM DEVICES (576px - 767.98px)
+  */
+@media (min-width:576px) and (max-width:767.98px){
+
+    .top{
+        justify-content:center;
+    }
+
+    .top>h1{
+        padding-left:0;
+        font-size:18px;
+        text-align:center;
+    }
+
+    .nav{
+        /* height:auto;
+        flex-direction:column;
+        top:50px;
+        padding:10px 0; */
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        top: 40px;
+        position: fixed;
+        background-color: slateblue;
+    }
+
+    #logo{
+        width:60px;
+        height:60px;
+    }
+
+    .nav>h4{
+        padding:8px 10px;
+        font-size:10px;
+    }
+
+    .nav_icons{
+        margin-left:0;
+        margin-top:2px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    
+
+}
+
+/*  
+   MD DEVICES (768px - 991.98px)
+  */
+@media (min-width:768px) and (max-width:991.98px){
+
+    .top{
+        justify-content:center;
+    }
+
+    .top>h1{
+        padding-left:0;
+        font-size:20px;
+    }
+
+    .nav{
+        flex-wrap:wrap;
+        height:auto;
+        padding:10px;
+    }
+
+    #logo{
+        width:100px;
+        height:100px;
+    }
+
+    .nav>h4{
+        padding:10px 20px;
+        font-size:15px;
+    }
+
+    .video-section{
+        margin-top:180px;
+    }
+
+}
+
+/*  
+   LG DEVICES (992px - 1199.98px)
+  */
+@media (min-width:992px) and (max-width:1199.98px){
+
+    .top>h1{
+        padding-left:0;
+        width:100%;
+        text-align:center;
+        font-size:22px;
+    }
+
+    .nav>h4{
+        padding:0 20px;
+        font-size:15px;
+    }
+
+    #logo{
+        width:100px;
+        height:100px;
+    }
+
+    .nav_icons{
+        margin-left:15px;
+    }
+
+}
+
+/*  
+   XL DEVICES (1200px - 1399.98px)
+  */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+    .top>h1{
+        padding-left:0;
+        width:100%;
+        text-align:center;
+    }
+
+    .nav>h4{
+        padding:0 30px;
+    }
+
+}
+
+/*  
+   XXL DEVICES (1400px and above pxs)
+    */
+@media (min-width:1400px){
+
+    /* No changes needed.
+    */
+
+}
+
+
+/* Drop down media query for haircare,skincare starts here*/
+
+/*   XS   */
+@media (max-width:575.98px){
+
+    .haircare,
+    .skincare{
+        width:10%;
+        text-align:center;
+        padding:4px 2px;
+        font-size: 8px;
+        position: relative;
+    }
+
+    .dropdown-menu{
+        position:absolute;
+        width:160px;
+        box-shadow:none;
+        margin-top: 10px;
+    }
+
+    .dropdown-menu a{
+        font-size:14px;
+        padding:8px 0;
+        text-align:center;
+
+    }
+
+}
+
+
+/*   SM   */
+@media (min-width:576px) and (max-width:767.98px){
+
+    .haircare,
+    .skincare{
+        /* width:100%;
+        text-align:center;
+        padding:10px 0; */
+        width:10%;
+        text-align:center;
+        padding:4px 2px;
+        font-size: 10px;
+        position: relative;
+    }
+
+    .dropdown-menu{
+        position:absolute;
+        width:160px;
+        box-shadow:none;
+        margin-top: 10px;
+    }
+
+    .dropdown-menu a{
+        font-size:15px;
+        padding:10px 0;
+        text-align:center;
+    }
+
+}
+
+
+/*   MD   */
+@media (min-width:768px) and (max-width:991.98px){
+
+    .haircare,
+    .skincare{
+        padding:0 20px;
+    }
+
+    .dropdown-menu{
+        width:200px;
+    }
+
+}
+
+
+/*   LG   */
+@media (min-width:992px) and (max-width:1199.98px){
+
+    .haircare,
+    .skincare{
+        padding:0 30px;
+    }
+
+}
+
+
+/*   XL   */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+    .haircare,
+    .skincare{
+        padding:0 40px;
+    }
+
+}
+
+
+/*   XXL   */
+@media (min-width:1400px){
+
+    .haircare,
+    .skincare{
+        padding:0 50px;
+    }
+
+}
+
+/* kits container mq starts here*/
+
+/* XS (0px-575.98px)*/
+@media (max-width:575.98px){
+
+.kitscontainer{
+    height:auto;
+    padding-bottom:40px;
+}
+
+.tagline{
+    height:auto;
+}
+
+.tagline h1{
+    padding:20px 10px;
+    font-size:28px;
+    text-align:center;
+}
+
+.tagline p{
+    margin-left:0;
+    margin-top:0;
+    text-align:center;
+    font-size:15px;
+}
+
+.pp{
+    width:320px;
+    height:420px;
+    float:none;
+    margin:30px auto;
+}
+
+}
+
+
+/* SM (576px-767.98px) */
+@media (min-width:576px) and (max-width:767.98px){
+
+.kitscontainer{
+    height:auto;
+    padding-bottom:40px;
+    margin-top: 100px;
+}
+
+.tagline h1{
+    padding:20px;
+    font-size:32px;
+    text-align:center;
+}
+
+.tagline p{
+    margin-left:0;
+    margin-top:0;
+    text-align:center;
+}
+
+.pp{
+    width:320px;
+    height:420px;
+    float:none;
+    margin:30px auto;
+}
+
+}
+
+
+/* MD (768px-991.98px) */
+@media (min-width:768px) and (max-width:991.98px){
+
+.kitscontainer{
+    height:auto;
+    padding-bottom:40px;
+    margin-top: 200px;
+}
+
+.tagline h1{
+    padding:20px;
+    font-size:34px;
+    text-align:center;
+}
+
+.tagline p{
+    margin-left:0;
+    margin-top:0;
+    text-align:center;
+}
+
+.pp{
+    float:left;
+    margin:30px 30px;
+}
+
+}
+
+
+/* LG (992px-1199.98px) */
+@media (min-width:992px) and (max-width:1199.98px){
+
+.kitscontainer{
+    height:auto;
+}
+
+.tagline h1{
+    padding:30px 150px;
+    text-align:center;
+}
+
+.tagline p{
+    margin-left:0;
+    margin-top:-22px;
+    text-align:center;
+}
+
+.pp{
+    margin:60px 80px;
+}
+
+}
+
+
+/* XL (1200px-1399.98px) */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+.kitscontainer{
+    height:1800px;
+}
+
+.tagline h1{
+    padding:30px 250px;
+    text-align:center;
+}
+
+.tagline p{
+    margin-left:0;
+    text-align:center;
+}
+.pp{
+    /* margin-top: 60px;
+    margin-bottom: 60px; */
+    margin: 60px 40px;
+}
+
+}
+
+/* XXL : 1400px and above pxs*/
+@media (min-width:1400px) and (max-width:1484px){
+
+.kitscontainer{
+    width:100%;
+    height:1850px;
+}
+
+.tagline h1{
+    padding:30px 270px;
+    font-size:40px;
+}
+
+.tagline p{
+    margin-left:470px;
+    margin-top:-20px;
+    font-size:18px;
+}
+
+.p1{
+    margin:60px 30px 60px 55px;
+}
+
+.p2,.p3,.p4{
+    margin:60px 20px;
+}
+
+.p5,.p6{
+    margin:60px 30px 60px 55px;
+}
+
+.p7{
+    margin:40px 20px;
+}
+
+.pp{
+    float:left;
+    
+}
+
+}
+
+/*footer and license mq starts here*/
+
+/* ================= XS (0px - 575.98px) ================= */
+@media (max-width:575.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:0;
+    text-align:center;
+}
+
+.linkinfo img{
+    margin-left:0;
+}
+
+.contactus i,
+.contactus span,
+.contactus p{
+    padding-left:0;
+}
+
+.license{
+    height:auto;
+}
+
+.license p{
+    text-align:center;
+    padding:15px;
+}
+
+}
+
+
+/*   SM (576px - 767.98px)   */
+@media (min-width:576px) and (max-width:767.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:0;
+    text-align:center;
+}
+
+.linkinfo img{
+    margin-left:0;
+}
+
+.contactus i,
+.contactus span,
+.contactus p{
+    padding-left:0;
+}
+
+.license{
+    height:auto;
+}
+
+.license p{
+    text-align:center;
+    padding:15px;
+}
+
+}
+
+
+/*   MD (768px - 991.98px)   */
+@media (min-width:768px) and (max-width:991.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:0;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   LG (992px - 1199.98px)   */
+@media (min-width:992px) and (max-width:1199.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:40px 0;
+}
+
+.linkinfo,
+.plist,
+.quicklinks,
+.contactus,
+.qr{
+    margin:20px;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   XL (1200px - 1399.98px)   */
+@media (min-width:1200px) and (max-width:1399.98px){
+
+.footer{
+    min-height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
+
+
+/*   XXL (1400px and above)   */
+@media (min-width:1400px){
+
+.footer{
+    display:flex;
+    flex-direction:row;
+}
+
+.license p{
+    text-align:center;
+}
+
+}
